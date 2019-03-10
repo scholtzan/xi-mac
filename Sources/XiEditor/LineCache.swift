@@ -110,6 +110,7 @@ fileprivate class LineCacheState<T>: UnfairLock {
     /// [xi-core docs](http://xi-editor.github.io/xi-editor/docs/frontend-protocol.html#view-update-protocol).
     func applyUpdate(update: [String: AnyObject]) -> InvalSet {
         let updateAnnotations = update["annotations"] as? [[String: AnyObject]] ?? []
+        print(updateAnnotations)
         annotations = AnnotationStore(from: updateAnnotations)
 
         let inval = InvalSet()
